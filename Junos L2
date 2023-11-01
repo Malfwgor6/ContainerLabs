@@ -1,0 +1,23 @@
+topology:
+  nodes:
+    vswitch1:
+      kind: vr-juniper_vjunosswitch
+      image: vrnetlab/vr-vjunosswitch:23.2R1.14
+
+    vswitch2:
+      kind: vr-juniper_vjunosswitch
+      image: vrnetlab/vr-vjunosswitch:23.2R1.14
+	  
+	vswitch3:
+      kind: vr-juniper_vjunosswitch
+      image: vrnetlab/vr-vjunosswitch:23.2R1.14
+	  
+	vswitch4:
+      kind: vr-juniper_vjunosswitch
+      image: vrnetlab/vr-vjunosswitch:23.2R1.14
+
+  links:
+    - endpoints: ["vswitch1:eth1", "vswitch2:eth1"]
+    - endpoints: ["vswitch1:eth2", "vswitch3:eth2"]
+    - endpoints: ["vswitch3:eth1", "vswitch4:eth1"]
+	  - endpoints: ["vswitch2:eth2", "vswitch4:eth2"]
