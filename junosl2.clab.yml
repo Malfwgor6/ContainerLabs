@@ -1,20 +1,26 @@
+name: junosl2
+
 topology:
   nodes:
     vswitch1:
       kind: vr-juniper_vjunosswitch
       image: vrnetlab/vr-vjunosswitch:23.2R1.14
+      startup-config: vswitch1.cfg
 
     vswitch2:
       kind: vr-juniper_vjunosswitch
       image: vrnetlab/vr-vjunosswitch:23.2R1.14
+      startup-config: vswitch2.cfg
     
     vswitch3:
       kind: vr-juniper_vjunosswitch
       image: vrnetlab/vr-vjunosswitch:23.2R1.14
+      startup-config: vswitch3.cfg
       
     vswitch4:
       kind: vr-juniper_vjunosswitch
       image: vrnetlab/vr-vjunosswitch:23.2R1.14
+      startup-config: vswitch4.cfg
 
   links:
     - endpoints: ["vswitch1:eth1", "vswitch2:eth1"]
